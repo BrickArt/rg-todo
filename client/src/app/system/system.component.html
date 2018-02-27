@@ -1,0 +1,45 @@
+<div class="system">
+    <div class="user">
+        <app-user></app-user>
+    </div>
+
+    <div class="main-block">
+
+        <div class="taskboards" *ngIf="isLoaded">
+            <app-taskboard
+                class="tb"
+                *ngFor="let tb of tasksBoards"
+                [tb]="tb"
+
+                (tbDelete)="TaskBoardDelete($event)"
+                (tbEdit)="tbEdit($event)"
+                (tbChange)="tbChange($event)"
+            ></app-taskboard>
+
+        </div>
+        <div class="add">
+             <app-system-add
+                *ngIf="!hide"
+                (addBoardCancel)="onAddWindowClose()"
+                (addBoard)="onAddBoard($event)"
+             ></app-system-add>
+
+             <div
+                class="add-btn"
+                *ngIf="hide"
+
+             >
+                 <button
+                    mat-raised-button
+                    color="accent"
+                    (click)="hide = false"
+                >Add new task board +</button>
+             </div>
+        </div>
+
+
+
+
+    </div>
+</div>
+

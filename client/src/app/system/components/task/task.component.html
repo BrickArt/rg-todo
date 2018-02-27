@@ -1,0 +1,19 @@
+<div class="t">
+    <div class="task" *ngIf="!edit">
+        <mat-checkbox [checked]="t.status" (change)="onChange()" class="check">{{ t.title }}</mat-checkbox>
+        <div class="buttons">
+            <button mat-icon-button (mousedown)="onKeydown()" (mouseup)="onKeyup()"><mat-icon>swap_vert</mat-icon></button>
+            <button mat-icon-button (click)="edit = true"><mat-icon>edit</mat-icon></button>
+            <button mat-icon-button (click)="onDelete()"><mat-icon>delete</mat-icon></button>
+        </div>
+    </div>
+    <div class="editor" *ngIf="edit">
+        <app-task-edit
+            class="editor"
+            [t]="t"
+            (taskEdit)="onEdit($event)"
+            (taskEditCancel)="onEditCancel()"
+        ></app-task-edit>
+    </div>
+</div>
+

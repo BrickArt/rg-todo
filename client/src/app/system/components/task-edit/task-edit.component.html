@@ -1,0 +1,12 @@
+<div class="editor">
+    <form [formGroup]="form" class="form" (ngSubmit)="onSubmit()">
+        <mat-form-field class="inp">
+            <input formControlName="title" matInput placeholder="Task title" [value]="t.title">
+            <mat-error *ngIf="form.get('title').invalid && form.get('title').touched">You must enter a value.</mat-error>
+        </mat-form-field>
+        <div class="btns">
+            <button mat-button color="accent" type="submit" [disabled]="form.invalid" class="btn">Save</button>
+            <button mat-button color="warn" (click)="onCancel()" class="btn">Cancel</button>
+        </div>
+    </form>
+</div>

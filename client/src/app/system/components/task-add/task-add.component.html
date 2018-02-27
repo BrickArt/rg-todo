@@ -1,0 +1,10 @@
+<div class="add">
+    <form [formGroup]="form" class="form" (ngSubmit)="onSubmit()">
+        <mat-form-field class="inp">
+            <textarea matInput formControlName="title" placeholder="Task"></textarea>
+            <mat-error *ngIf="form.get('title').invalid && form.get('title').touched">You must enter a value.</mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid" class="btn">+ Add task</button>
+    </form>
+
+</div>

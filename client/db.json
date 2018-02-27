@@ -1,0 +1,97 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "123456"
+    },
+    {
+      "username": "artem",
+      "password": "123123",
+      "id": 2
+    },
+    {
+      "username": "sonya",
+      "password": "123123",
+      "id": 3
+    }
+  ],
+  "tasksboards": [
+    {
+      "user_id": 1,
+      "title": "Home work",
+      "id": 2,
+      "tasks": [
+        {
+          "title": "My first task",
+          "status": true
+        },
+        {
+          "title": "111222",
+          "status": false
+        },
+        {
+          "title": "asdasd",
+          "status": false
+        },
+        {
+          "title": "asdasd1112222",
+          "status": true
+        }
+      ]
+    },
+    {
+      "user_id": 1,
+      "title": "Learn JavaScript",
+      "id": 6,
+      "tasks": [
+        {
+          "title": "asdasd",
+          "status": false
+        },
+        {
+          "title": "aasdasd",
+          "status": true
+        }
+      ]
+    },
+    {
+      "user_id": 3,
+      "title": "AAA",
+      "id": 7,
+      "tasks": [
+        {
+          "title": "asdasd",
+          "status": false
+        },
+        {
+          "title": "asdasdsad",
+          "status": false
+        },
+        {
+          "title": "asdsdasdasd",
+          "status": false
+        },
+        {
+          "title": "asdsadassadasd",
+          "status": false
+        }
+      ]
+    },
+    {
+      "user_id": 3,
+      "title": "Mersedes",
+      "id": 8
+    },
+    {
+      "user_id": 3,
+      "title": "asdasd",
+      "id": 9
+    },
+    {
+      "user_id": 3,
+      "title": "asdasd22222",
+      "id": 10
+    }
+  ]
+}

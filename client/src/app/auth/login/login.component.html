@@ -1,0 +1,44 @@
+<h1>Login page</h1>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <mat-form-field class="full-w">
+    <mat-icon matPrefix class="auth-icon">person</mat-icon>
+    <input
+      formControlName="username"
+      matInput
+      placeholder="Username"
+    >
+    <mat-error *ngIf="form.get('username').invalid && form.get('username').touched">{{getUsernameErrorMessage()}}</mat-error>
+  </mat-form-field>
+  <mat-form-field class="full-w">
+    <mat-icon matPrefix class="auth-icon">lock</mat-icon>
+    <input
+      formControlName="password"
+      matInput
+      [type]="hide ? 'password' : 'text'"
+      placeholder="Password"
+    >
+    <mat-icon matSuffix class="auth-icon" (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+    <mat-error *ngIf="form.get('password').invalid || form.get('password').touched">{{getPasswordErrorMessage()}}</mat-error>
+  </mat-form-field>
+  <button
+    [disabled]="form.invalid"
+    class="full-w btn"
+    mat-raised-button
+    color="accent"
+    type="submit"
+  >Login</button>
+  <div class="reg">
+    <span>No account?</span>
+    <a [routerLink]="['/registration']">
+        <button
+          class="btn btn-reg"
+          mat-button
+          color="primary"
+          type="submit"
+
+        >Create One.</button>
+    </a>
+</div>
+</form>
+

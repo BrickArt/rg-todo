@@ -1,0 +1,51 @@
+<div class="tb">
+
+    <mat-card>
+        <mat-card-header >
+            <div class="header" (mouseover)="hide = false" (mouseleave)="hide = true" *ngIf="!edited">
+                <div class="header-title">
+                    <span>Title</span>
+                    <h1>{{ tb.title }}</h1>
+                </div>
+                <div @fade class="buttons" *ngIf="!hide">
+                    <button mat-icon-button (click)="edited = true">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button mat-icon-button (click)="openDialog()">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
+
+            </div>
+            <div class="editor" *ngIf="edited">
+                <app-tb-edit [tb]="tb" (taskBoardEditCancel)="edited = false" (taskBoardEdit)="onEdit($event)"></app-tb-edit>
+            </div>
+
+        </mat-card-header>
+        <mat-card-content>
+            <div class="sortable" dnd-sortable-container [sortableData]="tb.tasks">
+                <div
+                    class="task"
+                    *ngFor="let t of tb.tasks; let idx = index"
+                    dnd-sortable
+                    [dragEnabled]="sortable"
+                    [sortableIndex]="idx" (onDropSuccess)="onDrop($event)"
+                >
+                    <app-task
+                       class="item"
+                       [t]="t"
+                       [idx]="idx"
+                       (taskCange)="onTaskChange($event)"
+                       (taskDelete)="onTaskDelete($event)"
+                       (keyup)="sortable = false"
+                       (keydown)="sortable = true"
+                   ></app-task>
+                </div>
+            </div>
+
+        </mat-card-content>
+        <mat-card-footer class="footer">
+            <app-task-add (taskAdd)="taskAdd($event)"></app-task-add>
+        </mat-card-footer>
+    </mat-card>
+</div>
