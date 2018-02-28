@@ -459,7 +459,7 @@ var LoginComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__shared_services_users_service__["a" /* UsersService */],
             __WEBPACK_IMPORTED_MODULE_4__shared_services_auth_service__["a" /* AuthService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */],
-            __WEBPACK_IMPORTED_MODULE_5__angular_material__["k" /* MatSnackBar */]])
+            __WEBPACK_IMPORTED_MODULE_5__angular_material__["B" /* MatSnackBar */]])
     ], LoginComponent);
     return LoginComponent;
 }());
@@ -613,7 +613,7 @@ var RegistrationComponent = /** @class */ (function () {
             styles: [__webpack_require__("../../../../../src/app/auth/registration/registration.component.sass")]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__shared_services_users_service__["a" /* UsersService */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_material__["k" /* MatSnackBar */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_material__["B" /* MatSnackBar */],
             __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */]])
     ], RegistrationComponent);
     return RegistrationComponent;
@@ -687,7 +687,7 @@ var DialogComponent = /** @class */ (function () {
             encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewEncapsulation */].None
         }),
         __param(1, Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Inject */])(__WEBPACK_IMPORTED_MODULE_1__angular_material__["a" /* MAT_DIALOG_DATA */])),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_material__["g" /* MatDialogRef */], Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_material__["k" /* MatDialogRef */], Object])
     ], DialogComponent);
     return DialogComponent;
 }());
@@ -833,7 +833,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var BaseApi = /** @class */ (function () {
     function BaseApi(http) {
         this.http = http;
-        this.baseUrl = 'http://localhost:3000/';
+        this.baseUrl = 'https://todo-for-nothing.herokuapp.com/';
     }
     BaseApi.prototype.getUrl = function (url) {
         if (url === void 0) { url = ''; }
@@ -893,15 +893,37 @@ var MaterialModule = /** @class */ (function () {
     MaterialModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["K" /* NgModule */])({
             exports: [
-                __WEBPACK_IMPORTED_MODULE_1__angular_material__["b" /* MatButtonModule */],
-                __WEBPACK_IMPORTED_MODULE_1__angular_material__["c" /* MatCardModule */],
-                __WEBPACK_IMPORTED_MODULE_1__angular_material__["d" /* MatCheckboxModule */],
-                __WEBPACK_IMPORTED_MODULE_1__angular_material__["f" /* MatDialogModule */],
-                __WEBPACK_IMPORTED_MODULE_1__angular_material__["h" /* MatIconModule */],
-                __WEBPACK_IMPORTED_MODULE_1__angular_material__["i" /* MatInputModule */],
-                __WEBPACK_IMPORTED_MODULE_1__angular_material__["j" /* MatMenuModule */],
-                __WEBPACK_IMPORTED_MODULE_1__angular_material__["l" /* MatSnackBarModule */],
-                __WEBPACK_IMPORTED_MODULE_1__angular_material__["m" /* MatToolbarModule */],
+                __WEBPACK_IMPORTED_MODULE_1__angular_material__["b" /* MatAutocompleteModule */],
+                __WEBPACK_IMPORTED_MODULE_1__angular_material__["c" /* MatButtonModule */],
+                __WEBPACK_IMPORTED_MODULE_1__angular_material__["d" /* MatButtonToggleModule */],
+                __WEBPACK_IMPORTED_MODULE_1__angular_material__["e" /* MatCardModule */],
+                __WEBPACK_IMPORTED_MODULE_1__angular_material__["f" /* MatCheckboxModule */],
+                __WEBPACK_IMPORTED_MODULE_1__angular_material__["g" /* MatChipsModule */],
+                __WEBPACK_IMPORTED_MODULE_1__angular_material__["h" /* MatDatepickerModule */],
+                __WEBPACK_IMPORTED_MODULE_1__angular_material__["j" /* MatDialogModule */],
+                __WEBPACK_IMPORTED_MODULE_1__angular_material__["l" /* MatExpansionModule */],
+                __WEBPACK_IMPORTED_MODULE_1__angular_material__["m" /* MatGridListModule */],
+                __WEBPACK_IMPORTED_MODULE_1__angular_material__["n" /* MatIconModule */],
+                __WEBPACK_IMPORTED_MODULE_1__angular_material__["o" /* MatInputModule */],
+                __WEBPACK_IMPORTED_MODULE_1__angular_material__["p" /* MatListModule */],
+                __WEBPACK_IMPORTED_MODULE_1__angular_material__["q" /* MatMenuModule */],
+                __WEBPACK_IMPORTED_MODULE_1__angular_material__["r" /* MatNativeDateModule */],
+                __WEBPACK_IMPORTED_MODULE_1__angular_material__["s" /* MatPaginatorModule */],
+                __WEBPACK_IMPORTED_MODULE_1__angular_material__["t" /* MatProgressBarModule */],
+                __WEBPACK_IMPORTED_MODULE_1__angular_material__["u" /* MatProgressSpinnerModule */],
+                __WEBPACK_IMPORTED_MODULE_1__angular_material__["v" /* MatRadioModule */],
+                __WEBPACK_IMPORTED_MODULE_1__angular_material__["w" /* MatRippleModule */],
+                __WEBPACK_IMPORTED_MODULE_1__angular_material__["x" /* MatSelectModule */],
+                __WEBPACK_IMPORTED_MODULE_1__angular_material__["y" /* MatSidenavModule */],
+                __WEBPACK_IMPORTED_MODULE_1__angular_material__["A" /* MatSliderModule */],
+                __WEBPACK_IMPORTED_MODULE_1__angular_material__["z" /* MatSlideToggleModule */],
+                __WEBPACK_IMPORTED_MODULE_1__angular_material__["C" /* MatSnackBarModule */],
+                __WEBPACK_IMPORTED_MODULE_1__angular_material__["D" /* MatSortModule */],
+                __WEBPACK_IMPORTED_MODULE_1__angular_material__["F" /* MatTableModule */],
+                __WEBPACK_IMPORTED_MODULE_1__angular_material__["G" /* MatTabsModule */],
+                __WEBPACK_IMPORTED_MODULE_1__angular_material__["H" /* MatToolbarModule */],
+                __WEBPACK_IMPORTED_MODULE_1__angular_material__["I" /* MatTooltipModule */],
+                __WEBPACK_IMPORTED_MODULE_1__angular_material__["E" /* MatStepperModule */]
             ],
             declarations: []
         })
@@ -1029,8 +1051,7 @@ var UsersService = /** @class */ (function (_super) {
         return _this;
     }
     UsersService.prototype.getUserByUsername = function (username) {
-        return this.get("users?username=" + username)
-            .map(function (user) { return user[0] ? user[0] : undefined; });
+        return this.get("users?username=" + username);
     };
     UsersService.prototype.createNewUser = function (user) {
         return this.post('users', user);
@@ -1098,13 +1119,17 @@ var SharedModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../../../../../src/environments/environment.prod.ts":
+/***/ "../../../../../src/environments/environment.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return environment; });
+// The file contents for the current environment will overwrite these during build.
+// The build system defaults to the dev environment which uses `environment.ts`, but if you do
+// `ng build --env=prod` then `environment.prod.ts` will be used instead.
+// The list of which env maps to which file can be found in `.angular-cli.json`.
 var environment = {
-    production: true
+    production: false
 };
 
 
@@ -1118,14 +1143,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__("../../../platform-browser-dynamic/esm5/platform-browser-dynamic.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__("../../../../../src/app/app.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment_prod__ = __webpack_require__("../../../../../src/environments/environment.prod.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Rx__ = __webpack_require__("../../../../rxjs/_esm5/Rx.js");
 
 
 
 
 
-if (__WEBPACK_IMPORTED_MODULE_3__environments_environment_prod__["a" /* environment */].production) {
+if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].production) {
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_17" /* enableProdMode */])();
 }
 Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */])

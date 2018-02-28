@@ -41,7 +41,7 @@ router.route('/users')
         }
     })
 
-router.route('/taskboards/:id?')
+router.route('/tasksboards/:id?')
     .get(function(req, res, next) {
         if (req.query.user_id) {
             console.log(req.query)
@@ -78,11 +78,11 @@ router.route('/taskboards/:id?')
     .put(function (req, res, next) {
         if (req.body && req.params.id) {
             Taskboard.findById(req.params.id).then(doc => {
-                doc = {
-                    user_id: req.body.user_id ? req.body.user_id : doc.user_id,
-                    title: req.body.title ? req.body.title : doc.title,
-                    tasks: req.body.tasks ? req.body.tasks : doc.tasks
-                };
+                console.log(req.body, doc)
+                req.body.user_id ? doc.user_id = req.body.user_id : doc.user_id = doc.user_id;
+                req.body.title ? doc.title = req.body.title : doc.title = doc.title;
+                req.body.tasks ? doc.tasks = req.body.tasks : doc.tasks = doc.tasks;
+                
                 doc.save(function (err) {
                     if (err) {
                         console.error(err)

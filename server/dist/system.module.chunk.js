@@ -671,7 +671,7 @@ var TaskboardComponent = /** @class */ (function () {
             styles: [__webpack_require__("../../../../../src/app/system/components/taskboard/taskboard.component.sass")],
             animations: [__WEBPACK_IMPORTED_MODULE_2__shared_animations_fade_animation__["a" /* fadeStateTrigger */]]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__angular_material__["e" /* MatDialog */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__angular_material__["i" /* MatDialog */]])
     ], TaskboardComponent);
     return TaskboardComponent;
 }());
@@ -947,7 +947,7 @@ var SystemComponent = /** @class */ (function () {
         var _this = this;
         this.taskService.createNewTaskBoard(taskBoard).subscribe(function (taskb) {
             _this.hide = true;
-            _this.tasksBoards.push(taskBoard);
+            _this.tasksBoards.push(taskb);
         });
     };
     SystemComponent.prototype.loadTaskBoards = function () {
