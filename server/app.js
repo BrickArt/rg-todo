@@ -11,7 +11,7 @@ const mongoose = require('./src/lib/mongoose')
 
 // Setup express
 app.disable("x-powered-by");
-app.use(express.static('../client/dist'));
+app.use(express.static('./dist'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
