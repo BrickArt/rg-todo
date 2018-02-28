@@ -1,0 +1,11 @@
+{
+  "name": "rg-todo",
+  "version": "1.0.0",
+  "main": "./server/app.js",
+  "engines": {
+    "node": "8.4.0"
+  },
+  "repository": "https://github.com/BrickArt/rg-todo.git",
+  "author": "Artem Rebryk <artemrebrik8099@gmail.com>",
+  "license": "MIT"
+}
