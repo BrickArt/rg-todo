@@ -5,12 +5,13 @@ const app = express();
 
 const config = require('./src/config/index.config')
 const routes = require('./src/router/index.router.js');
+const notFound = require('./src/router/not-found.router.js');
 const mongoose = require('./src/lib/mongoose')
 
 
 // Setup express
 app.disable("x-powered-by");
-app.use(express.static('./public'));
+app.use(express.static('../client/dist'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -33,6 +34,7 @@ app.use(function (req, res, next) {
 
 //routes
 app.use('/', routes);
+app.use('/', notFound)
 
 
 
