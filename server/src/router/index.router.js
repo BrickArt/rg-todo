@@ -6,7 +6,7 @@ const Taskboard = require("../models/taskboard.model").Taskboard;
 
 router.route('/')
     .get(function(req, res, next) {
-        res.sendFile("../../dist/index.html")
+        res.sendFile(__dirname + "../../dist/index.html")
     })
 
 router.route('/users')
